@@ -15,6 +15,21 @@ const ResultsPage: React.FC<ResultsPageProps> = ({
   onNeighborhoodSelect 
 }) => {
   const topMatch = neighborhoods[0];
+  const preferenceLabels: Record<keyof Preferences, string> = {
+    safety: 'Safety',
+    affordability: 'Affordability',
+    transit: 'Transit',
+    greenSpaces: 'Green spaces',
+    nightlife: 'Nightlife',
+    education: 'Education',
+    healthcare: 'Healthcare',
+    culture: 'Culture',
+  };
+  const topPriorities = (Object.keys(preferences) as Array<keyof Preferences>)
+    .sort((a, b) => preferences[b] - preferences[a])
+    .slice(0, 3)
+    .filter((key) => preferences[key] > 0)
+    .map((key) => preferenceLabels[key]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -28,6 +43,11 @@ const ResultsPage: React.FC<ResultsPageProps> = ({
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Based on your preferences, we found these neighborhoods that best fit your lifestyle
         </p>
+        {topPriorities.length > 0 && (
+          <p className="mt-3 text-sm text-gray-500">
+            Your top priorities: {topPriorities.join(', ')}
+          </p>
+        )}
       </div>
 
       {topMatch && (
