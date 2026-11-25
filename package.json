@@ -4,13 +4,19 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Smart Lifestyle-Based Neighborhood Matcher",
-  "keywords": ["neighborhood", "lifestyle", "matcher", "real-estate", "location"],
-  "author": "Your Name",
+  "keywords": [
+    "neighborhood",
+    "lifestyle",
+    "matcher",
+    "real-estate",
+    "location"
+  ],
+  "author": "Shaik Yunus",
   "license": "MIT",
   "homepage": "https://neighborfit.vercel.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/neighborfit.git"
+    "url": "https://github.com/itsyunus/NeighborFit.git"
   },
   "scripts": {
     "dev": "vite",
