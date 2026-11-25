@@ -37,4 +37,4 @@ Issues and pull requests are welcome. For a proposed change, include the user pr
 
 ## License
 
-The package metadata declares the MIT License.
+Licensed under the MIT License; see [LICENSE](LICENSE).
